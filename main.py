@@ -12,16 +12,29 @@ logoAscii = '''
  '''
 print(logoAscii)
 
-def createTable (data, header):
+def createTable (data, headers):
     # get Table Width
-    table_width = [max(len(str(item))for item in column)for column in zip(*data)]
+    table_width = [max(len(str(item)) for item in column)for column in zip(*data)]
+    data_width = [len(header) for header in headers]
+    maxData = sorted(table_width + data_width, reverse = True)[:3]
 
+    #print(sorted(maxData, reverse=True)[:3])
+    print(maxData)
+    
     #Create Header 
-    header = "+".join("-" * (width+2) for width in table_width)
+    header = "+" + "+".join("-" + "-" * (width+2) for width in table_width) + "+"
     table = []
+
     table.append(header)
+    table.append("|" + "|".join( " " + header.ljust(table_width[i]) + " " for i, header in enumerate(headers)) + "|")
     table.append(header)
-    return table
+
+
+    for row in data:
+        table.append("|" + "|" .join(" " + str(item).ljust(table_width[i]) + " " for i, item in enumerate(row)) + "|")
+
+    table.append(header)
+    return "\n".join(table)
     
 
 data = [
