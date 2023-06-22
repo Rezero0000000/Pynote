@@ -16,26 +16,28 @@ def createTable (data, headers):
     # get Table Width
     table_width = [max(len(str(item)) for item in column)for column in zip(*data)]
     data_width = [len(header) for header in headers]
-    maxData = sorted(table_width + data_width, reverse = True)[:3]
 
-    #print(sorted(maxData, reverse=True)[:3])
-    print(maxData)
-    
+    maxData = []
+    for i in range(3):
+        tes = [table_width[i], data_width[i]]
+        maxData.append(sorted(tes, reverse = True)[:1][0])
+
     #Create Header 
-    header = "+" + "+".join("-" + "-" * (width+2) for width in table_width) + "+"
+
+    header = "     +" + "+".join("-" * (width+2) for width in maxData) + "+"
     table = []
 
     table.append(header)
-    table.append("|" + "|".join( " " + header.ljust(table_width[i]) + " " for i, header in enumerate(headers)) + "|")
-    table.append(header)
-
+    table.append("     |" + "|".join( " " + header.ljust(maxData[i]) + " " for i, header in enumerate(headers)) + "|")
+    table.append("     |" + "|".join( "-" * (maxData[i] + 2) for i, header in enumerate(headers)) + "|")
+   
+    # Append row item
 
     for row in data:
-        table.append("|" + "|" .join(" " + str(item).ljust(table_width[i]) + " " for i, item in enumerate(row)) + "|")
+        table.append("     |" + "|" .join(" " + str(item).ljust(maxData[i]) + " " for i, item in enumerate(row)) + "|")
 
     table.append(header)
     return "\n".join(table)
-    
 
 data = [
     ["1", "Programming", 254],
@@ -46,9 +48,3 @@ header = ['No', 'Categories', 'Notes']
 
 table = createTable(data, header)
 print(table)
-    
-
-#print("\n  +-------------------------+----------+")
-#print("  | No | Categories         | Note     |")
-#print("  |----|--------------------|----------|")
-#print("  | 1  | Cyber Security     | 256      |")
