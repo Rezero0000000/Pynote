@@ -1,6 +1,9 @@
+from data import getData
 import os
 
 os.system('cls')
+#getData('data.json')
+
 logoAscii = '''
      ___                   _        
     | _ \ _  _  _ _   ___ | |_  ___ 
@@ -34,22 +37,27 @@ def createTable (data, headers):
     # Append row item
 
     for row in data:
-        table.append("    |" + "|" .join(" " + str(item).ljust(maxData[i]) + " " for i, item in enumerate(row)) + "|")
+        for key,value in row:
+            print(value)
+        #table.append("    |" + "|" .join(" " + str(item).ljust(maxData[key]) + " " for key, value in row) + "|")
 
     table.append(header)
     return "\n".join(table)
 
-data = [
-    ["1", "Programming", 254],
-    ["2", "Cyber Security", 43],
-    ["3", "English", 140],
-    ["4", "Game", 140],
-    ["5", "Just random thing", 140],
-]
 header = ['No', 'Categories', 'Notes']
+data = [
+        {"index":"1", "name":"Programming", "notes":254},
+        {"index":"1", "name":"Programming", "notes":254},
+        {"index":"1", "name":"Programming", "notes":254},
+   # ["2", "Cyber Security", 43],
+   # ["3", "English", 140],
+#    ["4", "Game", 140],
+ #   ["5", "Just random thing", 140],
+]
 
 table = createTable(data, header)
 print()
 print(table)
 print("    1, 2, 3 ->\n")
-action = input(str('Chose Your Action '))
+#action = input(str('Chose Your Action '))
+

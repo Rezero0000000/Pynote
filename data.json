@@ -4,8 +4,8 @@
     "name": "programming",
     "notes":[
       {
-        "title": 
-        "date":
+        "title": "1", 
+        "date": "2"
       }
     ]
   },
@@ -14,8 +14,8 @@
     "name": "Cyber Security",
     "notes":[
       {
-        "title": 
-        "date":
+        "title": "1", 
+        "date":"1"
       }
     ]
   },
@@ -24,8 +24,8 @@
     "name": "Math",
     "notes":[
       {
-        "title": 
-        "date":
+        "title": "1", 
+        "date":"1"
       }
     ]
   }
