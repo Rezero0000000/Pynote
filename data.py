@@ -1,16 +1,19 @@
 import json
 
-def loadData (path):
-    with open(path) as file:
-        data = json.load(file)
-        return data
+with open('data.json') as file:
+    data = json.load(file)
        
-# categories = [[], [], []]
-
-
-def getData ():
-    items = loadData('data.json')
+def getCategories ():
     categories = []
-        
-        #for data in item['notes']:
-getData()
+    for row in data:
+        category = []
+        for key, value in row.items():
+
+            if (key == "notes"):
+                category.append(len(value))
+                continue
+            category.append(value)
+
+        categories.append(category)
+
+    return categories

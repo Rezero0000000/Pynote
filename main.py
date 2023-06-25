@@ -1,4 +1,4 @@
-from data import getData
+from data import getCategories
 import os
 
 os.system('cls')
@@ -24,40 +24,46 @@ def createTable (data, headers):
     for i in range(3):
         tes = [table_width[i], data_width[i]]
         maxData.append(sorted(tes, reverse = True)[:1][0])
-
+    
     #Create Header 
 
     header = "    +" + "+".join("-" * (width+2) for width in maxData) + "+"
     table = []
 
     table.append(header)
-    table.append("    |" + "|".join( " " + header.ljust(maxData[i]) + " " for i, header in enumerate(headers)) + "|")
-    table.append("    |" + "|".join( "-" * (maxData[i] + 2) for i, header in enumerate(headers)) + "|")
-   
-    # Append row item
+    table.append("    |" + "|".join(
+        " " + header.ljust(maxData[i]) + " " for i, header in enumerate(headers)
+    ) + "|")
 
+    table.append("    |" + "|".join( 
+        "-" * (maxData[i] + 2) for i, header in enumerate(headers)
+    ) + "|")
+
+    # Append row item
     for row in data:
-        for key,value in row:
-            print(value)
-        #table.append("    |" + "|" .join(" " + str(item).ljust(maxData[key]) + " " for key, value in row) + "|")
+        table.append("    |" + "|" .join(
+            " " + str(value).ljust(maxData[key]) + " " for key,value in enumerate(row)
+        ) + "|")
 
     table.append(header)
     return "\n".join(table)
 
 header = ['No', 'Categories', 'Notes']
-data = [
-        {"index":"1", "name":"Programming", "notes":254},
-        {"index":"1", "name":"Programming", "notes":254},
-        {"index":"1", "name":"Programming", "notes":254},
-   # ["2", "Cyber Security", 43],
-   # ["3", "English", 140],
-#    ["4", "Game", 140],
- #   ["5", "Just random thing", 140],
-]
+data = getCategories()
 
 table = createTable(data, header)
 print()
 print(table)
 print("    1, 2, 3 ->\n")
-#action = input(str('Chose Your Action '))
+
+options = """
+    [1]. Create Category
+    [2]. Select Category <No> 
+    [3]. Update Category <No>
+    [4]. Delete Category <No>
+    [5]. Search <Keyword>
+"""
+print(options)
+action = input(str('Chose Your Action --> '))
+
 
