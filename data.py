@@ -9,7 +9,7 @@ def getCategories ():
         category = []
         for key, value in row.items():
 
-            if (key == "notes"):
+            if (key == "items"):
                 category.append(len(value))
                 continue
             category.append(value)

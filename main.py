@@ -48,7 +48,7 @@ def createTable (data, headers):
     table.append(header)
     return "\n".join(table)
 
-header = ['No', 'Categories', 'Notes']
+header = ['No', 'Menu', 'Notes']
 data = getCategories()
 
 table = createTable(data, header)
@@ -62,6 +62,7 @@ options = """
     [3]. Update Category <No>
     [4]. Delete Category <No>
     [5]. Search <Keyword>
+    [c]. Exit
 """
 print(options)
 action = input(str('Chose Your Action --> '))
