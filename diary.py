@@ -6,5 +6,8 @@ def main_diary ():
     header = ["No", "Title", "Date"]
     table = createTable(data, header)
 
-    print(table)
-    action = input(str('\n[Diary] Chose Menu --> '))
+    print(table) 
+    options = "\n\n[1]. Create  [2]. Read\n[3]. Update  [4]. Delete\n[5]. Search  [6]. Exit\n"
+    print(options)
+    action = input(str('[Diary] Chose Menu -> '))
+ 
