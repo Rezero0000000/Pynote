@@ -13,7 +13,9 @@ def getMenues ():
                 menu.append(len(value))
                 continue
             menu.append(value)
-
         menues.append(menu)
 
     return menues
+
+def getDiaryes ():
+    print(data)
