@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Note",
+    "name": "Diary",
     "items":[
       {
         "title": "1", 
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "name": "Diary",
+    "name": "Dream",
     "items":[
       {
         "title": "1", 
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "name": "Todo list",
+    "name": "Note",
     "items":[
       {
         "title": "1", 
@@ -43,14 +43,14 @@
   },
   {
     "id": 4,
-    "name": "Dream",
+    "name": "Planing",
     "items": [
 
     ]
   },
   {
     "id": 5,
-    "name": "Planing",
+    "name": "Todo list",
     "items": [
 
     ]

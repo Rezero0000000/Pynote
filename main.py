@@ -1,4 +1,5 @@
-from data import getCategories
+from data import getMenues
+from diary import main_diary
 import os
 
 os.system('cls')
@@ -27,44 +28,37 @@ def createTable (data, headers):
     
     #Create Header 
 
-    header = "    +" + "+".join("-" * (width+2) for width in maxData) + "+"
+    header = "       +" + "+".join("-" * (width+2) for width in maxData) + "+"
     table = []
 
     table.append(header)
-    table.append("    |" + "|".join(
+    table.append("       |" + "|".join(
         " " + header.ljust(maxData[i]) + " " for i, header in enumerate(headers)
     ) + "|")
 
-    table.append("    |" + "|".join( 
+    table.append("       |" + "|".join( 
         "-" * (maxData[i] + 2) for i, header in enumerate(headers)
     ) + "|")
 
     # Append row item
-    for row in data:
-        table.append("    |" + "|" .join(
+    for row in data: 
+        table.append("       |" + "|" .join(
             " " + str(value).ljust(maxData[key]) + " " for key,value in enumerate(row)
         ) + "|")
 
     table.append(header)
     return "\n".join(table)
 
-header = ['No', 'Menu', 'Notes']
-data = getCategories()
+header = ['No', 'Menu', 'Items']
+data = getMenues()
 
 table = createTable(data, header)
 print()
 print(table)
-print("    1, 2, 3 ->\n")
 
-options = """
-    [1]. Create Category
-    [2]. Select Category <No> 
-    [3]. Update Category <No>
-    [4]. Delete Category <No>
-    [5]. Search <Keyword>
-    [c]. Exit
-"""
-print(options)
-action = input(str('Chose Your Action --> '))
+action = input(str('\nChose Menu --> '))
 
-
+if (action == '1'):
+    os.system("cls")
+    print(logoAscii)
+    main_diary()

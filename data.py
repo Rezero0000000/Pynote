@@ -3,17 +3,17 @@ import json
 with open('data.json') as file:
     data = json.load(file)
        
-def getCategories ():
-    categories = []
+def getMenues ():
+    menues = []
     for row in data:
-        category = []
+        menu = []
         for key, value in row.items():
 
             if (key == "items"):
-                category.append(len(value))
+                menu.append(len(value))
                 continue
-            category.append(value)
+            menu.append(value)
 
-        categories.append(category)
+        menues.append(menu)
 
-    return categories
+    return menues
