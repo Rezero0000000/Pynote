@@ -14,8 +14,27 @@ def getMenues ():
                 continue
             menu.append(value)
         menues.append(menu)
-
     return menues
 
-def getDiaryes ():
-    print(data)
+def getRawItems (id):
+    for item in data:
+        if (item['id'] == id):
+            return item['items']
+
+def getItems (id):
+    rawItems = getRawItems(id)
+    items = []
+    messages = []
+
+    for row in rawItems:
+        item = []
+        message = []
+        for key, value in row.items():
+            if (key == "message"):
+                message.append(value)
+                continue
+            item.append(value)
+        messages.append(message)
+        items.append(item)
+
+    return items, messages
