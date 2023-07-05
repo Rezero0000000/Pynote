@@ -39,5 +39,11 @@ def getItems (id):
 
     return items, messages
 
-def createDiary (newData):
-    print(newData)
+def createItem (newData, id):
+    for menu in data:
+        if (menu['id'] == id):
+            menu['items'].append(newData)
+
+    with open('data.json', 'w') as file:
+        json.dump(data, file)
+
