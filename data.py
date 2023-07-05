@@ -38,3 +38,6 @@ def getItems (id):
         items.append(item)
 
     return items, messages
+
+def createDiary (newData):
+    print(newData)
