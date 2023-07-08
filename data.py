@@ -50,3 +50,9 @@ def findItem (data_id, menu_id):
             return item
 
     return False
+
+def deleteItem (data_id, menu_id):
+    for menu in data:
+        if (menu['id'] == menu_id):
+            for item in menu['items']:
+                print(item)
