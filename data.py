@@ -69,4 +69,16 @@ def deleteItem (data_id, menu_id):
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
+def updateItem (updateItem, menu_id):
+    for menu in data:
+        if (menu['id'] == menu_id):
+            for item in menu['items']:
+                if(item['id'] == updateItem['id']):
+                    item['title'] = updateItem['title']
+                    item['message'] = updateItem['message']
+                    item['date'] = updateItem['date']
+    
+    with open('data.json', 'w') as file:
+        json.dump(data, file)
+
 

@@ -1,5 +1,5 @@
 import argparse
-from data import getItems, createItem, findItem, deleteItem
+from data import getItems, createItem, findItem, deleteItem, updateItem
 from ui import createTable
 import datetime
 import os
@@ -47,15 +47,22 @@ def main_diary ():
             createItem(newDiary, 1)
 
         elif (args.update):
-            item = findItem(args.update)
             title = str(input("New title : "))
             message = str(input("New message : "))
             now = datetime.datetime.now()
             date = now.strftime("%d-%B-%Y")
 
+            updateData = {
+                "id": args.update, 
+                "title": title, 
+                "message": message, 
+                "date": date
+            }
+            updateItem (updateData,1)
 
         elif (args.delete):
             deleteItem(args.delete, 1)
+
         elif (args.search):
             pass
     except argparse.ArgumentError:
