@@ -45,4 +45,8 @@ def createItem (newData, id):
 
 def findItem (data_id, menu_id):
     items = getRawItems(menu_id);
-    print(items)
+    for item in items:
+        if (item['id'] == data_id):
+            return item
+
+    return False

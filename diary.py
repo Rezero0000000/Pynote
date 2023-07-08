@@ -2,6 +2,7 @@ import argparse
 from data import getItems, createItem, findItem
 from ui import createTable
 import datetime
+import os
 
 def main_diary ():
     data = getItems(1)
@@ -22,7 +23,14 @@ def main_diary ():
     try:
         args = parser.parse_args(user_input.split())
         if(args.read):
-            findItem(args.read,1);
+            item = findItem(args.read,1);
+            if (item):
+                print("\n")
+                print("Title:", item['title'])
+                print("Date:", item['date'])
+                print("\nMessage:\"", item['message'],'"')
+            else:
+                print("Data not found")
 
         elif (args.create):
             title = str(input("Title : "))
