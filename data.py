@@ -24,20 +24,16 @@ def getRawItems (id):
 def getItems (id):
     rawItems = getRawItems(id)
     items = []
-    messages = []
 
     for row in rawItems:
         item = []
-        message = []
         for key, value in row.items():
             if (key == "message"):
-                message.append(value)
                 continue
             item.append(value)
-        messages.append(message)
         items.append(item)
 
-    return items, messages
+    return items
 
 def createItem (newData, id):
     for menu in data:
@@ -47,3 +43,6 @@ def createItem (newData, id):
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
+def findItem (data_id, menu_id):
+    items = getRawItems(menu_id);
+    print(items)
