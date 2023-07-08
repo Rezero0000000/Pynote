@@ -52,7 +52,21 @@ def findItem (data_id, menu_id):
     return False
 
 def deleteItem (data_id, menu_id):
+        
+    # Delete data
     for menu in data:
         if (menu['id'] == menu_id):
-            for item in menu['items']:
-                print(item)
+            for i,item in enumerate(menu['items']):
+                if(item['id'] == data_id):
+                     del menu['items'][i]
+    
+    # Reorder item
+    for menu in data:
+        if (menu['id'] == menu_id):
+            for i, item in enumerate(menu['items']):
+                item['id'] = i+1 
+    
+    with open('data.json', 'w') as file:
+        json.dump(data, file)
+
+
