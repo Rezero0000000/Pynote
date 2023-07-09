@@ -4,8 +4,8 @@ from ui import createTable
 import datetime
 import os
 
-def main_diary ():
-    data = getItems(1)
+def main_dream ():
+    data = getItems(2)
     header = ["No", "Title", "Date"]
     table = createTable(data, header)
 

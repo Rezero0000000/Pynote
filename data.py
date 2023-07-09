@@ -30,6 +30,8 @@ def getItems (id):
         for key, value in row.items():
             if (key == "message"):
                 continue
+            elif (key == "status"):
+                continue
             item.append(value)
         items.append(item)
 
@@ -80,5 +82,17 @@ def updateItem (updateItem, menu_id):
     
     with open('data.json', 'w') as file:
         json.dump(data, file)
+
+def search (pattern): 
+    words = string.split()
+    print(pattern)
+    # Mencari kata-kata yang mendekati dengan pola yang diberikan
+    similar_words = []
+    for word in words:
+        if pattern in word:
+            similar_words.append(word)
+
+    print(similar_words)
+
 
 

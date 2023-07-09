@@ -1,6 +1,7 @@
 from ui import *
 from data import getMenues
 from diary import main_diary
+from dream import main_dream
 
 import os
 os.system('cls')
@@ -18,3 +19,8 @@ if (action == '1'):
     os.system("cls")
     printLogo()
     main_diary()
+elif (action == '2'):
+    os.system("cls")
+    printLogo()
+    main_dream()
+    
