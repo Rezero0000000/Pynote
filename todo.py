@@ -6,10 +6,10 @@ import os
 
 def main_todo ():
     data = getItems(3)
-    header = ["No", "Title", "Date"]
+    header = ["No", "Title", "Status"]
 
     printTodo(data, header)
-    print("Type -h or --help for see list of command")
+    #print("Type -h or --help for see list of command")
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()

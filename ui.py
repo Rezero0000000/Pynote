@@ -12,7 +12,12 @@ def printLogo ():
     print(logoAscii)
 
 def printTodo (data, headers):
-    print(data, headers)
+    print("\n")
+    print("          Todo                     Status")
+    print("          -------------------------------\n")
+    for row in data:
+        todo_str = f"          {[row[0]]}. {row[1]:<20}{row[2]}"
+        print(todo_str)
 
 def createTable (data, headers):
     # get Table Width

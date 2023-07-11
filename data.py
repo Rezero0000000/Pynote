@@ -30,8 +30,6 @@ def getItems (id):
         for key, value in row.items():
             if (key == "message"):
                 continue
-            elif (key == "status"):
-                continue
             item.append(value)
         items.append(item)
 

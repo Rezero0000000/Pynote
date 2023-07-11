@@ -2,6 +2,7 @@ from ui import *
 from data import getMenues
 from diary import main_diary
 from note import main_note
+from todo import main_todo
 
 import os
 os.system('cls')
@@ -26,6 +27,7 @@ elif (action == '2'):
 elif (action == '3'):
     os.system("cls")
     printLogo()
+    main_todo()
 else:
     print("Wrong input man")
     
