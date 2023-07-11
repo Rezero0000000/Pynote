@@ -1,14 +1,14 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import printTodo
+from ui import printMenu
 import datetime
 import os
 
 def main_todo ():
     data = getItems(3)
-    header = ["No", "Title", "Status"]
+    header = ["Todo", "Status"]
 
-    printTodo(data, header)
+    printMenu(data, header)
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()

@@ -10,15 +10,12 @@ ___                   _
     '''
     print(logoAscii)
 
-def printTodo (data, headers):
-    print("\nTodo                     Status")
+def printMenu (data, headers):
+    print("\n" + headers[0] + "                     "+headers[1])
     print("--------------------------------")
     for row in data:
         todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
         print(todo_str)
-
-def printTitle (title):
-    print("\n[ "+title+" ]")
 
 def createTable (data, headers):
     # get Table Width
