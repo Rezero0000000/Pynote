@@ -13,7 +13,6 @@ def main_todo ():
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r', '--read', type=int, help='')
     parser.add_argument('-c', '--create', type=int, help='lol')
     parser.add_argument('-u', '--update', type=int, help='lol')
     parser.add_argument('-d', '--delete', type=int, help='lol')
@@ -21,17 +20,7 @@ def main_todo ():
     
     try:
         args = parser.parse_args(user_input.split())
-        if(args.read):
-            item = findItem(args.read,3);
-            if (item):
-                print("\n")
-                print("Title:", item['title'])
-                print("Date:", item['date'])
-                print("\nMessage:\"", item['message'],'"')
-            else:
-                print("Data not found")
-
-        elif (args.create):
+        if (args.create):
             title = str(input("Title : "))
             message = str(input("Message : "))
             now = datetime.datetime.now()

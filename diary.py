@@ -10,7 +10,6 @@ def main_diary ():
     table = createTable(data, header)
 
     print(table) 
-    print("Type -h or --help for see list of command")
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()

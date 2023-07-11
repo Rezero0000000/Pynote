@@ -18,15 +18,17 @@ action = input(str('\nChose Menu --> '))
 
 if (action == '1'):
     os.system("cls")
-    printLogo()
+    print("\n\n\n")
     main_diary()
 elif (action == '2'):
     os.system("cls")
-    printLogo()
+    print("\n\n\n")
+    printTitle("Note");
     main_note()
 elif (action == '3'):
-    os.system("cls")
     printLogo()
+    print("\n\n\n")
+    printTitle("Todo List");
     main_todo()
 else:
     print("Wrong input man")
