@@ -1,6 +1,6 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import printMenu
+from ui import printMenu, printLogo
 import datetime
 import os
 
@@ -51,7 +51,12 @@ def main_todo ():
             deleteItem(args.delete, 3)
 
         elif (args.search):
-            search(args.search)
+            data = search(args.search, 1)
+            os.system("cls")
+            print("\n\n\n")
+            printLogo()
+            printMenu(data, header)
+
     except argparse.ArgumentError:
         print("Argumen tidak valid.")
  

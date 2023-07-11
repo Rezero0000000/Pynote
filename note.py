@@ -1,6 +1,6 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import createTable
+from ui import createTable, printLogo
 import datetime
 import os
 
@@ -63,7 +63,13 @@ def main_note ():
             deleteItem(args.delete, 2)
 
         elif (args.search):
-            search(args.search)
+            data = search(args.search, 1)
+            table = createTable(data, header)
+            os.system("cls")
+            print("\n\n\n")
+            printLogo()
+            print(table)
+
     except argparse.ArgumentError:
         print("Argumen tidak valid.")
  

@@ -81,16 +81,16 @@ def updateItem (updateItem, menu_id):
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
-def search (pattern): 
-    words = string.split()
-    print(pattern)
-    # Mencari kata-kata yang mendekati dengan pola yang diberikan
-    similar_words = []
-    for word in words:
-        if pattern in word:
-            similar_words.append(word)
+def search (pattern, menu_id):
+    items = getItems(menu_id)
+    found_items = []
 
-    print(similar_words)
+    for item in items:
+        words = item[1].split()
+        for word in words:
+            if pattern in word:
+                found_items.append(item)
+    return found_items
 
 
 
