@@ -3,25 +3,22 @@ def printLogo ():
     logoAscii = '''
 ___                   _        
 | _ \ _  _  _ _   ___ | |_  ___ 
-|  _/| || || ' \ / _ \|  _|/ -_)
+|  _/| || || ' \ / _ \|  _|/ -_)    
 |_|   \_, ||_||_|\___/ \__|\___|
-      |__/       
-  -----------------------------
-    -[ My Personal Library ]-
+      |__/      
+=====------[ Ver 1 ] ------=====
     '''
     print(logoAscii)
 
 def printTodo (data, headers):
-    print("\n")
-    print("Todo                     Status")
+    print("\nTodo                     Status")
     print("--------------------------------")
     for row in data:
-        todo_str = f"          {[row[0]]}. {row[1]:<20}{row[2]}"
+        todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
         print(todo_str)
 
 def printTitle (title):
-    print("  ===------ [ Hello World ] ------===")
-
+    print("\n[ "+title+" ]")
 
 def createTable (data, headers):
     # get Table Width
@@ -32,24 +29,25 @@ def createTable (data, headers):
     for i in range(3):
         tes = [table_width[i], data_width[i]]
         maxData.append(sorted(tes, reverse = True)[:1][0])
+
     
     #Create Header 
 
-    header = "  +" + "+".join("-" * (width+2) for width in maxData) + "+"
+    header = "+" + "+".join("-" * (width+2) for width in maxData) + "+"
     table = []
 
     table.append(header)
-    table.append("  |" + "|".join(
+    table.append("|" + "|".join(
         " " + header.ljust(maxData[i]) + " " for i, header in enumerate(headers)
     ) + "|")
 
-    table.append("  |" + "|".join( 
+    table.append("|" + "|".join( 
         "-" * (maxData[i] + 2) for i, header in enumerate(headers)
     ) + "|")
 
     # Append row item
     for row in data: 
-        table.append("  |" + "|" .join(
+        table.append("|" + "|" .join(
             " " + str(value).ljust(maxData[key]) + " " for key,value in enumerate(row)
         ) + "|")
 

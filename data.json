@@ -1,1 +1,110 @@
-[{"id": 1, "name": "Diary", "items": [{"id": 1, "title": "hello world", "date": "20-feb-2023", "message": "im died"}]}, {"id": 2, "name": "Note", "items": [{"id": 1, "title": "hello world", "date": "20-feb-2023", "message": "im died"}]}, {"id": 3, "name": "Todo list", "items": [{"id": 1, "title": "hello world", "message": "im died", "status": true}, {"id": 2, "title": "hello world", "message": "im died", "status": true}]}]
+[
+  {
+    "id": 1,
+    "name": "Diary",
+    "items":[
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Note",
+    "items":[
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Todo list",
+    "items": [
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+    ]
+  }
+]
