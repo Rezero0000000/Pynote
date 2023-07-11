@@ -1,7 +1,7 @@
 from ui import *
 from data import getMenues
 from diary import main_diary
-from dream import main_dream
+from note import main_note
 
 import os
 os.system('cls')
@@ -22,5 +22,10 @@ if (action == '1'):
 elif (action == '2'):
     os.system("cls")
     printLogo()
-    main_dream()
+    main_note()
+elif (action == '3'):
+    os.system("cls")
+    printLogo()
+else:
+    print("Wrong input man")
     

@@ -13,43 +13,26 @@
   },
   {
     "id": 2,
-    "name": "Dream",
+    "name": "Note",
     "items":[
       {
         "id": 1,
         "title": "hello world", 
         "date": "20-feb-2023",
-        "message": "im died",
-        "status": true
+        "message": "im died"
       }
     ]
   },
   {
     "id": 3,
-    "name": "Note",
-    "items":[
-      {
-        "title": "1", 
-        "date":"1"
-      },
-      {
-        "title": "2", 
-        "date":"2"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Planing",
-    "items": [
-
-    ]
-  },
-  {
-    "id": 5,
     "name": "Todo list",
     "items": [
-
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
     ]
   }
 ]

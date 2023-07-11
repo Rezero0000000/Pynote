@@ -11,6 +11,9 @@ def printLogo ():
     '''
     print(logoAscii)
 
+def printTodo (data, headers):
+    print(data, headers)
+
 def createTable (data, headers):
     # get Table Width
     table_width = [max(len(str(item)) for item in column)for column in zip(*data)]

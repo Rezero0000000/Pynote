@@ -1,15 +1,14 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import createTable
+from ui import printTodo
 import datetime
 import os
 
-def main_dream ():
-    data = getItems(2)
+def main_todo ():
+    data = getItems(3)
     header = ["No", "Title", "Date"]
-    table = createTable(data, header)
 
-    print(table) 
+    printTodo(data, header)
     print("Type -h or --help for see list of command")
     user_input = input("\nMasukkan argumen: ")
     
@@ -23,7 +22,7 @@ def main_dream ():
     try:
         args = parser.parse_args(user_input.split())
         if(args.read):
-            item = findItem(args.read,1);
+            item = findItem(args.read,3);
             if (item):
                 print("\n")
                 print("Title:", item['title'])
@@ -44,7 +43,7 @@ def main_dream ():
                 "message": message, 
                 "date": date
             }
-            createItem(newDiary, 1)
+            createItem(newDiary, 3)
 
         elif (args.update):
             title = str(input("New title : "))
@@ -58,10 +57,10 @@ def main_dream ():
                 "message": message, 
                 "date": date
             }
-            updateItem (updateData,1)
+            updateItem (updateData,3)
 
         elif (args.delete):
-            deleteItem(args.delete, 1)
+            deleteItem(args.delete, 3)
 
         elif (args.search):
             search(args.search)
