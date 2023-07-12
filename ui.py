@@ -10,12 +10,18 @@ ___                   _
     '''
     print(logoAscii)
 
-def printMenu (data, headers, page = 0):
+def printMenu (data, headers, page = 0, status = ""):
     print("\n" + headers[0] + "                     "+headers[1])
     print("--------------------------------")
     if (page > 0):
         for row in data[page-1]:
-            if (row[2]):
+            if (status == "true"):
+                todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
+                print(todo_str)
+            elif (status == "false"):
+                todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
+                print(todo_str)
+            else:
                 todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
                 print(todo_str)
     else:

@@ -52,10 +52,9 @@ def main_todo ():
 
             os.system("cls")
 
-            print(data)
             print("\n\n\n")
             printLogo()
-            printMenu(data, header, page)
+            printMenu(data, header, page, "false")
 
         elif (args.update):
             title = str(input("New title : "))

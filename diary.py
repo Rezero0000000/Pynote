@@ -7,7 +7,7 @@ import os
 def main_diary ():
     data = getItems(1)
     header = ["No", "Title", "Date"]
-    page = 3
+    page = 1
     total_page = len(data)
     table = createTable(data, header, page)
 
