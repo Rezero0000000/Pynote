@@ -1,4 +1,5 @@
 import json
+import math
 
 with open('data.json') as file:
     data = json.load(file)
@@ -21,9 +22,22 @@ def getRawItems (id):
         if (item['id'] == id):
             return item['items']
 
+def paginate(data, items_per_page):
+    total_items = len(data)
+    total_pages = math.ceil(total_items / items_per_page)
+    paginated_data = []
+
+    for page in range(total_pages):
+        start_index = page * items_per_page
+        end_index = start_index + items_per_page
+        page_data = data[start_index:end_index]
+        paginated_data.append(page_data)
+
+    return paginated_data
+
 def getItems (id):
     rawItems = getRawItems(id)
-    items = []
+    items1 = []
 
     for row in rawItems:
         item = []
@@ -31,9 +45,15 @@ def getItems (id):
             if (key == "message"):
                 continue
             item.append(value)
-        items.append(item)
-
-    return items
+        items1.append(item)
+    
+    
+    if (len(items1) > 5):
+        print("yosh")
+        items2 = []
+        paginate_item = paginate(items1, 5)
+        return paginate_item 
+    return items1
 
 def createItem (newData, id):
     for menu in data:

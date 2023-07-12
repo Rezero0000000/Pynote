@@ -10,14 +10,14 @@ def main_note ():
     table = createTable(data, header)
 
     print(table) 
-    user_input = input("\nMasukkan argumen: ")
+    user_input = input("\nInput argumen: ")
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r', '--read', type=int, help='')
-    parser.add_argument('-c', '--create', type=int, help='lol')
-    parser.add_argument('-u', '--update', type=int, help='lol')
-    parser.add_argument('-d', '--delete', type=int, help='lol')
-    parser.add_argument('-s', '--search', type=str, help='Lol')
+    parser.add_argument('-r', '--read', type=int, help='Read Note')
+    parser.add_argument('-c', '--create', type=int, help='Create Note')
+    parser.add_argument('-u', '--update', type=int, help='Update Note <id>')
+    parser.add_argument('-d', '--delete', type=int, help='Delete Note <id>')
+    parser.add_argument('-s', '--search', type=str, help='Search Note <keyword> note: Input must string type')
     
     try:
         args = parser.parse_args(user_input.split())
@@ -71,5 +71,5 @@ def main_note ():
             print(table)
 
     except argparse.ArgumentError:
-        print("Argumen tidak valid.")
+        print("Argumen is not valid.")
  

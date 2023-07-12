@@ -1,23 +1,27 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import createTable, printLogo
+from ui import createTable, printLogo, printPagination
 import datetime
 import os
 
 def main_diary ():
     data = getItems(1)
     header = ["No", "Title", "Date"]
-    table = createTable(data, header)
+    page = 3
+    total_page = len(data)
+    table = createTable(data, header, page)
 
-    print(table) 
-    user_input = input("\nMasukkan argumen: ")
+    print(table)
+    printPagination(total_page, page)
+        
+    user_input = input("\nInput Argument argumen: ")
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('-r', '--read', type=int, help='')
-    parser.add_argument('-c', '--create', type=int, help='lol')
-    parser.add_argument('-u', '--update', type=int, help='lol')
-    parser.add_argument('-d', '--delete', type=int, help='lol')
-    parser.add_argument('-s', '--search', type=str, help='Lol')
+    parser.add_argument('-r', '--read', type=int, help='Read Diary')
+    parser.add_argument('-c', '--create', type=int, help='Create Diary')
+    parser.add_argument('-u', '--update', type=int, help='Update Diary <id>')
+    parser.add_argument('-d', '--delete', type=int, help='Delete diary <id>')
+    parser.add_argument('-s', '--search', type=str, help='Search Diary <keyword> note: Input must string type')
     
     try:
         args = parser.parse_args(user_input.split())
@@ -71,5 +75,5 @@ def main_diary ():
             print(table)
 
     except argparse.ArgumentError:
-        print("Argumen tidak valid.")
+        print("Argumen is not valid")
  

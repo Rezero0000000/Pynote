@@ -21,7 +21,7 @@ def main_todo ():
         args = parser.parse_args(user_input.split())
         if (args.create):
             title = str(input("Title : "))
-            message = str(input("Message : "))
+            message = title
             now = datetime.datetime.now()
             date = now.strftime("%d-%B-%Y")
 
