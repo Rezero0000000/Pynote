@@ -10,12 +10,17 @@ ___                   _
     '''
     print(logoAscii)
 
-def printMenu (data, headers):
+def printMenu (data, headers, page = 0):
     print("\n" + headers[0] + "                     "+headers[1])
     print("--------------------------------")
-    for row in data:
-        todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
-        print(todo_str)
+    if (page > 0):
+        for row in data[page-1]:
+            todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
+            print(todo_str)
+    else:
+        for row in data:
+            todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
+            print(todo_str)
 
 def createTable (data, headers, page):
 

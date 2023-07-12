@@ -47,12 +47,10 @@ def getItems (id):
             item.append(value)
         items1.append(item)
     
+    items2 = []
+    paginate_item = paginate(items1, 5)
+    return paginate_item 
     
-    if (len(items1) > 5):
-        print("yosh")
-        items2 = []
-        paginate_item = paginate(items1, 5)
-        return paginate_item 
     return items1
 
 def createItem (newData, id):

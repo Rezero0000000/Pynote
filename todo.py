@@ -1,14 +1,17 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import printMenu, printLogo
+from ui import printMenu, printLogo, printPagination
 import datetime
 import os
 
 def main_todo ():
     data = getItems(3)
     header = ["Todo", "Status"]
+    page = 1
+    total_page = len(data)
+    printMenu(data, header, page)
 
-    printMenu(data, header)
+    printPagination(total_page, page)
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()
@@ -16,7 +19,7 @@ def main_todo ():
     parser.add_argument('-u', '--update', type=int, help='lol')
     parser.add_argument('-d', '--delete', type=int, help='lol')
     parser.add_argument('-s', '--search', type=str, help='Lol')
-    
+    parser.add_argument('-p', '--page', type=int, help='Choice page')
     try:
         args = parser.parse_args(user_input.split())
         if (args.create):
@@ -56,6 +59,13 @@ def main_todo ():
             print("\n\n\n")
             printLogo()
             printMenu(data, header)
+
+        elif (args.page):    
+            os.system('cls')
+            print("\n\n\n")
+            printLogo()
+            printMenu(data, header, page)
+            printPagination(total_page, args.page)
 
     except argparse.ArgumentError:
         print("Argumen tidak valid.")
