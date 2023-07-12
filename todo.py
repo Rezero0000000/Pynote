@@ -1,5 +1,5 @@
 import argparse
-from data import getItems, createItem, findItem, deleteItem, updateItem, search
+from data import getItems, createItem, findItem, deleteItem, updateItem, search, setStatus, getItemStatus
 from ui import printMenu, printLogo, printPagination
 import datetime
 import os
@@ -15,11 +15,16 @@ def main_todo ():
     user_input = input("\nMasukkan argumen: ")
     
     parser = argparse.ArgumentParser()
+
+    parser.add_argument('-f', '--isFalse', type=int, help='lol')
+    parser.add_argument('-t', '--isTrue', type=int, help='lol')
     parser.add_argument('-c', '--create', type=int, help='lol')
     parser.add_argument('-u', '--update', type=int, help='lol')
     parser.add_argument('-d', '--delete', type=int, help='lol')
     parser.add_argument('-s', '--search', type=str, help='Lol')
-    parser.add_argument('-p', '--page', type=int, help='Choice page')
+    parser.add_argument('-l', '--list', type=int, help='lol')
+    parser.add_argument('-p', '--page', type=bool, help='Choice page')
+
     try:
         args = parser.parse_args(user_input.split())
         if (args.create):
@@ -35,6 +40,22 @@ def main_todo ():
                 "date": date
             }
             createItem(newDiary, 3)
+        if (args.list):
+            data = getItemStatus(True)
+            os.system("cls")
+            print("\n\n\n")
+            printLogo()
+            printMenu(data, header, page)
+
+        elif(args.list == False):
+            data = getItemStatus(False)
+
+            os.system("cls")
+
+            print(data)
+            print("\n\n\n")
+            printLogo()
+            printMenu(data, header, page)
 
         elif (args.update):
             title = str(input("New title : "))
@@ -66,6 +87,12 @@ def main_todo ():
             printLogo()
             printMenu(data, header, page)
             printPagination(total_page, args.page)
+
+        elif (args.isTrue):
+            setStatus(args.isTrue, True)
+
+        elif (args.isFalse):
+            setStatus(args.isFalse, False)
 
     except argparse.ArgumentError:
         print("Argumen tidak valid.")

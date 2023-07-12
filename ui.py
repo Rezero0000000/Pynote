@@ -15,8 +15,9 @@ def printMenu (data, headers, page = 0):
     print("--------------------------------")
     if (page > 0):
         for row in data[page-1]:
-            todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
-            print(todo_str)
+            if (row[2]):
+                todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"
+                print(todo_str)
     else:
         for row in data:
             todo_str = f"{[row[0]]}. {row[1]:<20}{row[2]}"

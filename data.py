@@ -110,5 +110,28 @@ def search (pattern, menu_id):
                 found_items.append(item)
     return found_items
 
+def setStatus (item_id, status):
+    for item in data[2]['items']:
+        if (item['id'] == item_id):
+            item['status'] = status
 
+    with open('data.json', 'w') as file:
+        json.dump(data, file)
 
+def getItemStatus (status):
+    items1 = []
+    data = getRawItems(3)
+
+    for d in data:
+        if (int(d['status']) == status):
+            item = []
+            for key, value in d.items():
+                if (key == "message"):
+                    continue
+                item.append(value)
+            items1.append(item)
+
+    items2 = []
+    paginate_item = paginate(items1, 5)
+    return paginate_item 
+    
