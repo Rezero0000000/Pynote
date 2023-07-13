@@ -76,17 +76,18 @@ def main_diary ():
         elif (args.search):
             data = search(args.search, 1)
             table = createTable(data, header, page)
-
+            clearScreen()
             print(table)
 
         elif (args.page):    
-            os.system('cls')
-            print("\n\n\n")
-            printLogo()
-            table = createTable(data, header, args.page)
-            print(table)
-            printPagination(total_page, args.page)
+            clearScreen()
+            if (args.page > len(data)):
+                print("Data not found")
+                printPagination(total_page, 1)
+            else:
+                table = createTable(data, header, args.page)
+                print(table)
+                printPagination(total_page, args.page)
 
     except argparse.ArgumentError:
         print("Argumen is not valid")
- 

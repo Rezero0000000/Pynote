@@ -81,7 +81,7 @@ def deleteItem (data_id, menu_id):
         if (menu['id'] == menu_id):
             for i, item in enumerate(menu['items']):
                 item['id'] = i+1 
-    
+
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
