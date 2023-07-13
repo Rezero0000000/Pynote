@@ -5,9 +5,10 @@ This is a command-line interface (CLI) application designed to help you write an
 ## Screenshoot
 
 <div>
-  <div><img src='./screenshoot/1.png' alt='screenshoot 1' width='300'></div>
-  <div><img src='./screenshoot/2.png' alt='screenshoot 1' width='300'></div>
+  <img src='./screenshoot/2.png' alt='screenshoot 2' width='300'>
+  <img src='./screenshoot/1.png' alt='screenshoot 1' width='300' style='margin-right: 30px;'>
 <div>
+
 
 ## How to Run
 
