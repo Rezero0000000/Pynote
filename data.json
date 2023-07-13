@@ -1,1 +1,105 @@
-[{"id": 1, "name": "Diary", "items": [{"id": 1, "title": "Archcraft", "date": "20-feb-2023", "message": "im died"}, {"id": 2, "title": "ss", "date": "13-July-2023", "message": "hhh"}, {"id": 3, "title": "", "message": "", "date": "13-July-2023"}, {"id": 4, "title": "3333", "message": "eee", "date": "13-July-2023"}]}, {"id": 2, "name": "Note", "items": [{"id": 1, "title": "hello world", "date": "20-feb-2023", "message": "im died"}, {"id": 2, "title": "Goodbye", "date": "20-feb-2023", "message": "im died"}, {"id": 3, "title": "Archcraft", "date": "20-feb-2023", "message": "im died"}, {"id": 4, "title": "Linux", "date": "20-feb-2023", "message": "im died"}, {"id": 5, "title": "Oyasumi", "date": "20-feb-2023", "message": "im died"}, {"id": 2, "title": "33", "message": "22", "date": "13-July-2023"}, {"id": 7, "title": "w", "message": "w", "date": "13-July-2023"}]}, {"id": 3, "name": "Todo list", "items": [{"id": 1, "title": "hello world", "status": true}, {"id": 2, "title": "Goodbye", "status": false}, {"id": 3, "title": "Archcraft", "status": true}, {"id": 4, "title": "Linux", "status": true}, {"id": 5, "title": "dd", "status": false}, {"id": 6, "title": "c ndkcnd", "status": false}]}]
+[
+  {
+    "id": 1,
+    "name": "Diary",
+    "items":[
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Note",
+    "items":[
+      {
+        "id": 1,
+        "title": "hello world", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "date": "20-feb-2023",
+        "message": "im died"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Todo list",
+    "items": [
+      {
+        "id": 1,
+        "title": "hello world", 
+        "status": true
+      },
+      {
+        "id": 2,
+        "title": "Goodbye", 
+        "status": false
+      }
+      ,{
+        "id": 3,
+        "title": "Archcraft", 
+        "status": true
+      },
+      {
+        "id": 4,
+        "title": "Linux", 
+        "status": false
+      },
+      {
+        "id": 5,
+        "title": "Oyasumi", 
+        "status": true
+      }
+    ]
+  }
+]

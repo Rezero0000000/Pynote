@@ -78,36 +78,26 @@
       {
         "id": 1,
         "title": "hello world", 
-        "date": "20-feb-2023",
-        "message": "im died",
         "status": true
       },
       {
         "id": 2,
         "title": "Goodbye", 
-        "date": "20-feb-2023",
-        "message": "im died",
         "status": false
       }
       ,{
         "id": 3,
         "title": "Archcraft", 
-        "date": "20-feb-2023",
-        "message": "im died",
         "status": true
       },
       {
         "id": 4,
         "title": "Linux", 
-        "date": "20-feb-2023",
-        "message": "im died",
         "status": false
       },
       {
         "id": 5,
         "title": "Oyasumi", 
-        "date": "20-feb-2023",
-        "message": "im died",
         "status": true
       }
     ]
