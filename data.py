@@ -1,5 +1,6 @@
 import json
 import math
+import re
 
 with open('data.json') as file:
     data = json.load(file)
@@ -47,12 +48,9 @@ def getItems (id):
             item.append(value)
         items1.append(item)
     
-    items2 = []
     paginate_item = paginate(items1, 5)
     return paginate_item 
     
-    return items1
-
 def createItem (newData, id):
     for menu in data:
         if (menu['id'] == id):
@@ -99,17 +97,34 @@ def updateItem (updateItem, menu_id):
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
-def search (pattern, menu_id):
-    items = getItems(menu_id)
-    found_items = []
+def search (regex_pattern, menu_id):
+    rawItems = getRawItems(menu_id)
+    data = []
 
-    for item in items:
-        words = item[1].split()
-        for word in words:
-            if pattern in word:
-                found_items.append(item)
-    return found_items
+    for row in rawItems:
+        item = []
+        for key, value in row.items():
+            if (key == "message"):
+                continue
+            item.append(value)
+        data.append(item)
+    
+    search_result = []
 
+    for item in data:
+        if re.search(regex_pattern, item[1], re.IGNORECASE):
+            search_result.append(item)
+    
+    finalResult = []
+    if len(search_result) > 0:
+        for item in search_result:
+            finalResult.append(item)
+
+    paginate_item = paginate(finalResult, 5)
+
+    return paginate_item
+  
+ 
 def setStatus (item_id, status):
     for item in data[2]['items']:
         if (item['id'] == item_id):

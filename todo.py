@@ -21,7 +21,6 @@ def main_todo ():
     parser.add_argument('-c', '--create', type=int, help='lol')
     parser.add_argument('-u', '--update', type=int, help='lol')
     parser.add_argument('-d', '--delete', type=int, help='lol')
-    parser.add_argument('-s', '--search', type=str, help='Lol')
     parser.add_argument('-l', '--list', type=int, help='lol')
     parser.add_argument('-p', '--page', type=bool, help='Choice page')
 
@@ -45,7 +44,7 @@ def main_todo ():
             os.system("cls")
             print("\n\n\n")
             printLogo()
-            printMenu(data, header, page)
+            printMenu(data, header, page, "true")
 
         elif(args.list == False):
             data = getItemStatus(False)
@@ -72,13 +71,6 @@ def main_todo ():
 
         elif (args.delete):
             deleteItem(args.delete, 3)
-
-        elif (args.search):
-            data = search(args.search, 1)
-            os.system("cls")
-            print("\n\n\n")
-            printLogo()
-            printMenu(data, header)
 
         elif (args.page):    
             os.system('cls')

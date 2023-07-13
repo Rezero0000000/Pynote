@@ -1,6 +1,6 @@
 import argparse
 from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import createTable, printLogo, printPagination
+from ui import createTable, printLogo, printPagination, clearScreen
 import datetime
 import os
 
@@ -29,8 +29,8 @@ def main_diary ():
         if(args.read):
             item = findItem(args.read,1);
             if (item):
-                print("\n")
-                print("Title:", item['title'])
+                clearScreen()
+                print("\nTitle:", item['title'])
                 print("Date:", item['date'])
                 print("\nMessage:\"", item['message'],'"')
             else:
@@ -49,6 +49,8 @@ def main_diary ():
                 "date": date
             }
             createItem(newDiary, 1)
+            clearScreen()
+            print("Data sucessfully created")
 
         elif (args.update):
             title = str(input("New title : "))
@@ -63,16 +65,18 @@ def main_diary ():
                 "date": date
             }
             updateItem (updateData,1)
+            clearScreen()
+            print("Data sucessfully Updated")
 
         elif (args.delete):
             deleteItem(args.delete, 1)
+            clearScreen()
+            print("Data sucessfully Deleted")
 
         elif (args.search):
             data = search(args.search, 1)
-            table = createTable(data, header)
-            os.system("cls")
-            print("\n\n\n")
-            printLogo()
+            table = createTable(data, header, page)
+
             print(table)
 
         elif (args.page):    

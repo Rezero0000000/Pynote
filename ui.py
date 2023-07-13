@@ -1,3 +1,5 @@
+import os
+
 def printLogo ():
 
     logoAscii = '''
@@ -9,6 +11,11 @@ ___                   _
 =====---- [ Ver 1.0 ] -----=====
     '''
     print(logoAscii)
+
+def clearScreen ():
+    os.system("cls")
+    print("\n\n\n")
+    printLogo()
 
 def printMenu (data, headers, page = 0, status = ""):
     print("\n" + headers[0] + "                     "+headers[1])
