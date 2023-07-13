@@ -88,4 +88,4 @@ def printPagination (totalPage, currentPage):
     if currentPage < totalPage - 1:
         pagination_string += "..."
 
-    print(pagination_string)
+    print("\n" + pagination_string)

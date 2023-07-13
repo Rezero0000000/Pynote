@@ -17,19 +17,13 @@ printMenu(data, header)
 action = input(str('\nChose Menu --> '))
 
 if (action == '1'):
-    os.system("cls")
-    print("\n\n\n")
-    printLogo()
+    clearScreen()
     main_diary()
 elif (action == '2'):
-    os.system("cls")
-    print("\n\n\n")
-    printLogo()
+    clearScreen()
     main_note()
 elif (action == '3'):
-    os.system("cls")
-    print("\n\n\n")
-    printLogo()
+    clearScreen()
     main_todo()
 else:
     print("Wrong input man")

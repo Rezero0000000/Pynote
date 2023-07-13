@@ -91,8 +91,12 @@ def updateItem (updateItem, menu_id):
             for item in menu['items']:
                 if(item['id'] == updateItem['id']):
                     item['title'] = updateItem['title']
-                    item['message'] = updateItem['message']
-                    item['date'] = updateItem['date']
+                    
+                    if(('message' not in item) and ('date' not in item)):
+                        item['status'] = updateItem['status']
+                    else:
+                        item['message'] = updateItem['message']
+                        item['date'] = updateItem['date']
     
     with open('data.json', 'w') as file:
         json.dump(data, file)
