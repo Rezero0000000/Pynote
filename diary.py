@@ -1,5 +1,5 @@
 import argparse
-from data import getItems, createItem, findItem, deleteItem, updateItem, search
+from data import getItems, createItem, findItem, deleteItem, updateItem, search, getRawItems
 from ui import createTable, printLogo, printPagination, clearScreen
 import datetime
 import os
@@ -13,8 +13,7 @@ def main_diary ():
 
     print(table)
     printPagination(total_page, page)
-        
-    user_input = input("\nInput Argument argumen: ")
+    user_input = input("\nInput Argument : ")
     
     parser = argparse.ArgumentParser()
     parser.add_argument('-r', '--read', type=int, help='Read Diary')
@@ -43,14 +42,14 @@ def main_diary ():
             date = now.strftime("%d-%B-%Y")
 
             newDiary = {
-                "id": len(data) + 1, 
+                "id": len(getRawItems(1)) + 1, 
                 "title": title, 
                 "message": message, 
                 "date": date
             }
             createItem(newDiary, 1)
             clearScreen()
-            print("Data sucessfully created")
+            print("Data sucessfully Created")
 
         elif (args.update):
             title = str(input("New title : "))

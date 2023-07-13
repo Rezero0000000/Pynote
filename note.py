@@ -1,15 +1,18 @@
 import argparse
-from data import getItems, createItem, findItem, deleteItem, updateItem, search
-from ui import createTable, printLogo
+from data import getItems, createItem, findItem, deleteItem, updateItem, search, getRawItems
+from ui import createTable, printLogo, printPagination, clearScreen
 import datetime
 import os
 
 def main_note ():
     data = getItems(2)
     header = ["No", "Title", "Date"]
-    table = createTable(data, header)
+    page = 1
+    total_page = len(data)
+    table = createTable(data, header, page)
 
     print(table) 
+    printPagination(total_page, page)
     user_input = input("\nInput argumen: ")
     
     parser = argparse.ArgumentParser()
@@ -37,14 +40,16 @@ def main_note ():
             message = str(input("Message : "))
             now = datetime.datetime.now()
             date = now.strftime("%d-%B-%Y")
-
+            
             newDiary = {
-                "id": len(data) + 1, 
+                "id": len(getRawItems(2)) + 1, 
                 "title": title, 
                 "message": message, 
                 "date": date
             }
             createItem(newDiary, 2)
+            clearScreen()
+            print("Data sucessfully Created")
 
         elif (args.update):
             title = str(input("New title : "))
@@ -59,25 +64,29 @@ def main_note ():
                 "date": date
             }
             updateItem (updateData,2)
+            clearScreen()
+            print("Data sucessfully Updated")
 
         elif (args.delete):
             deleteItem(args.delete, 2)
+            clearScreen()
+            print("Data sucessfully Deleted")
 
         elif (args.search):
             data = search(args.search, 1)
-            table = createTable(data, header)
-            os.system("cls")
-            print("\n\n\n")
-            printLogo()
+            table = createTable(data, header, page)
+            clearScreen() 
             print(table)
         
-        elif (args.page):    
-            os.system('cls')
-            print("\n\n\n")
-            printLogo()
-            table = createTable(data, header, args.page)
-            print(table)
-            printPagination(total_page, args.page)
+        elif (args.page):   
+            clearScreen()
+            if (args.page > len(data)):
+                print("Data not found")
+                printPagination(total_page, 1)
+            else:
+                table = createTable(data, header, args.page)
+                print(table)
+                printPagination(total_page, args.page)
 
     except argparse.ArgumentError:
         print("Argumen is not valid.")
