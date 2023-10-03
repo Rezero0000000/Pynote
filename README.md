@@ -3,12 +3,7 @@
 This is a command-line interface (CLI) application designed to help you write and manage your notes effectively.
 
 ## Screenshoot
-
-<div>
-  <img src='./screenshoot/2.png' alt='screenshoot 2' width='300'>
-  <img src='./screenshoot/1.png' alt='screenshoot 1' width='300' style='margin-right: 30px;'>
-<div>
-
+  <img src='./screenshoot/1.png' alt='screenshoot 1' width='300' style='margin-left: 30px;'>
 
 ## How to Run
 
